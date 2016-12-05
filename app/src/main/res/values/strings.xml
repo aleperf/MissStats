@@ -1,3 +1,24 @@
+
 <resources>
-    <string name="app_name">MissStats</string>
+
+    <string name="app_name">Miss Stats</string>
+
+    <string-array name="scrap_item_title">
+
+    <item>What is Statistics?</item>
+    <item>Gimme Five!</item>
+    <item>Probability</item>
+    <item>The Shape of Normality</item>
+    <item>The Monty Hall Problem</item>
+    </string-array>
+
+    <string-array name="scrap_item_subtitle">
+    <item>Reality through numbers</item>
+    <item>The five things to know</item>
+    <item>The power of one</item>
+    <item>We are all under a bell</item>
+    <item>How to win a tv show</item>
+    </string-array>
+
+
 </resources>

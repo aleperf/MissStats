@@ -1,6 +1,7 @@
 package stats.aleperf.example.missstats;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,8 +32,7 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private StatsAdapter mAdapter;
-    private String[] mTitles;
-    private String[] mSubTitles;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -59,11 +59,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.home_elements);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         HomeArgumentsLab argumentsLab = HomeArgumentsLab.getHomeArgumentsLab(getActivity());
-        mTitles = argumentsLab.getTitles();
-        Log.d("accipicchia", "leggo 0: " + mTitles[0]);
-        mSubTitles = argumentsLab.getSubtitles();
         mAdapter = new StatsAdapter(argumentsLab);
         mRecyclerView.setAdapter(mAdapter);
         return view;
@@ -77,14 +73,21 @@ public class HomeFragment extends Fragment {
         public StatsHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            mScrapTitleTextView = (TextView) itemView.findViewById(R.id.big_title_text_view);
-            mScrapSubtitleTextView = (TextView) itemView.findViewById(R.id.subtitle_text_view);
+            mScrapTitleTextView = (TextView) itemView.findViewById(R.id.home_title_text_view);
+            mScrapSubtitleTextView = (TextView) itemView.findViewById(R.id.home_subtitle_text_view);
         }
 
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(), mScrapTitleTextView.getText() + "clicked", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), mScrapTitleTextView.getText() + "clicked", Toast.LENGTH_SHORT).show();
+            String title = mScrapTitleTextView.getText().toString();
+
+            switch(title){
+                case "Meet Miss Stats":
+                    Intent intent = new Intent(getActivity(),MeetMissStatsActivity.class);
+                    startActivity(intent);
+            }
         }
 
         public void bindStats(String title, String subtitle) {
@@ -108,7 +111,7 @@ public class HomeFragment extends Fragment {
         @Override
         public StatsHolder onCreateViewHolder(ViewGroup parent, int ViewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(R.layout.item_home, parent, false);
+            View view = layoutInflater.inflate(R.layout.alternative_home, parent, false);
             return new StatsHolder(view);
         }
 

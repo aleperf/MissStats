@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="homeTitleFont" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/textColorHomeButtons</item>
+        <item name="android:textSize">@dimen/item_home_font_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="homeSubTitleFont" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/textColorHomeButtons</item>
+        <item name="android:textSize">@dimen/item_home_font_subtitle</item>
+        <item name="android:textStyle">italic</item>
+
+    </style>
+
 </resources>

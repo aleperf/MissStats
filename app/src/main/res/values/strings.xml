@@ -1,24 +1,35 @@
-
 <resources>
 
     <string name="app_name">Miss Stats</string>
-
+    <!--- Home Screen Tiles Titles and Subtitles -->
     <string-array name="scrap_item_title">
-
-    <item>What is Statistics?</item>
-    <item>Gimme Five!</item>
-    <item>Probability</item>
-    <item>The Shape of Normality</item>
-    <item>The Monty Hall Problem</item>
+        <item>Meet Miss Stats</item>
+        <item>What is Statistics?</item>
+        <item>Gimme Five!</item>
+        <item>Probability</item>
+        <item>The Shape of Normality</item>
+        <item>The Monty Hall Problem</item>
+        <item>Quizzes</item>
     </string-array>
 
     <string-array name="scrap_item_subtitle">
-    <item>Reality through numbers</item>
-    <item>The five things to know</item>
-    <item>The power of one</item>
-    <item>We are all under a bell</item>
-    <item>How to win a tv show</item>
+        <item>Your friendly neighborhood statistician</item>
+        <item>Reality through numbers</item>
+        <item>The five things to know</item>
+        <item>The power of one</item>
+        <item>We are all under a bell</item>
+        <item>How to win a tv show</item>
+        <item>Test your knowledge</item>
     </string-array>
 
+    <!-- Meet Miss Stats Tile Text -->
 
+    <string name="meetMissStats">Miss Stats is the Statistics teacher everyone would be happy to meet, even who ignore what Statistics is.
+ Her mission is to spread the knowledge of Statistics everywhere with simple and  effective words and above all with the help of many, many examples.
+ Once, many years ago, I told her (I even don\'t remember about what): \"Miss Stats, this is really impossible for me, this would never happen!\", but she answered me, and
+ I have never forgot it: \"Nothing is impossible. There are only things extremely improbable\" and then she calculated with extremely precision what my chance were.
+ No problem, big or small, can scare Miss Stats, her motto is always \"Give me enough data and I will give you the solution\".
+ Numbers, according to Miss Stats, are very often undervalued, somebody think they are useful only for calculating results, ma this isn\'t true: if you observe them with attention,
+ like a true detective, they can tell you incredible stories and disclose entire secret worlds.
+ Follow Miss Stats through this app, you won\'t regret it!</string>
 </resources>

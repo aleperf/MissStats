@@ -21,25 +21,24 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
 
         FragmentManager fm = getSupportFragmentManager();
         //if this is the first time the app is initialized, add the needed fragments
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             HomeFragment homeFragment = HomeFragment.newInstance();
             fm.beginTransaction().add(R.id.fragment_container, homeFragment).commit();
             //if this is a dual pane layout, initialize for the first time the detail_panel
-            if(dualPane){
+            if (dualPane) {
                 Fragment detailFragment = MeetMissStatsFragment.newInstance();
                 fm.beginTransaction().add(R.id.detail_panel, detailFragment).commit();
             }
         } else {
             //the app si already initialized
-            //refresh recyclerview
-            HomeFragment homeFragment = HomeFragment.newInstance();
-            fm.beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
-            if(dualPane){
-            int position = savedInstanceState.getInt(KEY_POSITION, 0);
-            onArgumentSelectedListener(position);}
+            //if dual pane refresh the side menu and choose the appropriate detail panel
+            if (dualPane) {
+                HomeFragment homeFragment = HomeFragment.newInstance();
+                fm.beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
+                int position = savedInstanceState.getInt(KEY_POSITION, 0);
+                onArgumentSelectedListener(position);
+            }
         }
-
-
     }
 
     @Override
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         boolean dualPane = getResources().getBoolean(R.bool.dual_pane);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        if(dualPane){
+        if (dualPane) {
             transaction.replace(R.id.detail_panel, fragment);
         } else {
             transaction.replace(R.id.fragment_container, fragment);
@@ -85,24 +84,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
 
         transaction.addToBackStack(null);
         transaction.commit();
-    }
-
-    private void switchFragment(Fragment fragment) {
-
-        boolean dualPane = getResources().getBoolean(R.bool.dual_pane);
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        if (!dualPane) {
-            // Replace whatever is in the fragment_container view with this fragment,
-            // and add the transaction to the back stack so the user can navigate back
-            transaction.replace(R.id.fragment_container, fragment);
-        } else {
-            transaction.replace(R.id.detail_panel, fragment);
-        }
-        transaction.addToBackStack(null);
-        // Commit the transaction
-        transaction.commit();
-
     }
 
     @Override

@@ -1,14 +1,22 @@
 package stats.aleperf.example.missstats;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.List;
 
 
 /**
@@ -85,14 +93,19 @@ public class HomeFragment extends Fragment {
 
     private class StatsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView mScrapTitleTextView;
-        private TextView mScrapSubtitleTextView;
+        private TextView mTitle;
+        private TextView mSubTitle;
+        private ImageView mImage;
+        private LinearLayout mLayout;
+
 
         public StatsHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            mScrapTitleTextView = (TextView) itemView.findViewById(R.id.home_title_text_view);
-            mScrapSubtitleTextView = (TextView) itemView.findViewById(R.id.home_subtitle_text_view);
+            mTitle = (TextView) itemView.findViewById(R.id.home_title_text_view);
+            mSubTitle = (TextView) itemView.findViewById(R.id.home_subtitle_text_view);
+            mImage = (ImageView) itemView.findViewById(R.id.image_arg);
+            mLayout =(LinearLayout) itemView.findViewById(R.id.home_linear_layout);
         }
 
 
@@ -102,20 +115,22 @@ public class HomeFragment extends Fragment {
             mCallback.onArgumentSelectedListener(position);
         }
 
-        public void bindStats(String title, String subtitle) {
-            mScrapTitleTextView.setText(title);
-            mScrapSubtitleTextView.setText(subtitle);
+        public void bindStats(String title, String subtitle, int image, int color) {
+            mTitle.setText(title);
+           mSubTitle.setText(subtitle);
+           mImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), image, null));
+            mLayout.setBackgroundColor(ContextCompat.getColor(getContext(),color));
         }
+
     }
 
     private class StatsAdapter extends RecyclerView.Adapter<StatsHolder> {
 
-        private String[] homeTitles;
-        private String[] homeSubtitles;
+        private List<HomeArgument> arguments;
+
 
         public StatsAdapter(HomeArgumentsLab argumentLab) {
-            homeTitles = argumentLab.getTitles();
-            homeSubtitles = argumentLab.getSubtitles();
+            arguments = argumentLab.getArguments();
         }
 
 
@@ -129,16 +144,18 @@ public class HomeFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(StatsHolder holder, int position) {
-
-            String title = homeTitles[position];
-            String subtitle = homeSubtitles[position];
-            holder.bindStats(title, subtitle);
+            HomeArgument argument = arguments.get(position);
+            String title = argument.getTitle();
+            String subtitle = argument.getSubtitle();
+            int image = argument.getDrawable();
+            int color = argument.getColor();
+            holder.bindStats(title, subtitle, image, color);
         }
 
         @Override
         public int getItemCount() {
 
-            return homeTitles.length;
+            return arguments.size();
         }
 
 

@@ -3,17 +3,27 @@ package stats.aleperf.example.missstats;
 import android.content.Context;
 import android.content.res.Resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class HomeArgumentsLab {
 
     private static HomeArgumentsLab argumentsLab;
-    private static String[] mTitles;
-    private static String[] mSubtitles;
+    private static List<HomeArgument> arguments;
+
 
     private HomeArgumentsLab(Context context) {
         Resources res = context.getResources();
-        mTitles = res.getStringArray(R.array.scrap_item_title);
-        mSubtitles = res.getStringArray(R.array.scrap_item_subtitle);
+        String[] title = res.getStringArray(R.array.scrap_item_title);
+        String[] subtitle = res.getStringArray(R.array.scrap_item_subtitle);
+        int[] images = {R.drawable.missstats1,R.drawable.placeholder1, R.drawable.placeholder1, R.drawable.placeholder1,
+        R.drawable.placeholder1,R.drawable.placeholder1, R.drawable.placeholder1};
+        arguments = new ArrayList<>();
+        for(int i= 0; i < title.length; i++){
+            HomeArgument argument = new HomeArgument(title[i], subtitle[i],images[i], R.color.meetMissStats);
+            arguments.add(argument);
+        }
     }
 
     public static HomeArgumentsLab getHomeArgumentsLab(Context context) {
@@ -23,11 +33,7 @@ public class HomeArgumentsLab {
         return argumentsLab;
     }
 
-    public String[] getTitles(){
-        return mTitles;
-    }
-
-    public String[] getSubtitles(){
-        return mSubtitles;
+    public List<HomeArgument> getArguments(){
+        return arguments;
     }
 }

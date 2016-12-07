@@ -1,48 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--- alternative layout without images for home screen tiles -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-
-    android:layout_width="300dp"
-    android:layout_height="175dp"
+    android:layout_width="@dimen/item_home_width"
+    android:layout_height="@dimen/item_home_height"
     android:layout_margin="8dp"
+    android:background="@color/meetMissStats"
 
-    android:layout_gravity="center_horizontal"
-    android:id="@+id/frame_item_view">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="8dp">
 
-
-    <ImageView
-        android:id="@+id/image_arg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/placeholder3" />
-
-    <LinearLayout
-
+    <TextView
+        android:id="@+id/big_title_text_view"
+        style="@style/homeTitleFont"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:background="@color/meetMissStats"
-        android:orientation="vertical"
-        android:padding="8dp">
+        android:layout_margin="8dp"
+        android:gravity="center"
+        tools:text="What is Statistics?" />
 
-        <TextView
-            android:id="@+id/home_title_text_view"
-            style="@style/homeTitleFont"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:text="Meet Miss Stats" />
+    <TextView
+        android:id="@+id/subtitle_text_view"
+        style="@style/homeSubTitleFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="The power of numbers" />
 
-        <TextView
-            android:id="@+id/home_subtitle_text_view"
-            style="@style/homeSubTitleFont"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            tools:text="Your friendly neighborhood statistician" />
-
-    </LinearLayout>
-
-
-</FrameLayout>
+</LinearLayout>

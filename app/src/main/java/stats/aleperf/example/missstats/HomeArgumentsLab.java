@@ -17,11 +17,12 @@ public class HomeArgumentsLab {
         Resources res = context.getResources();
         String[] title = res.getStringArray(R.array.scrap_item_title);
         String[] subtitle = res.getStringArray(R.array.scrap_item_subtitle);
-        int[] images = {R.drawable.missstats1,R.drawable.placeholder1, R.drawable.placeholder1, R.drawable.placeholder1,
-        R.drawable.placeholder1,R.drawable.placeholder1, R.drawable.placeholder1};
+        int[] images = {R.drawable.missstats1, R.drawable.what_is_stat, R.drawable.gimme_five, R.drawable.rolling_dice,
+                R.drawable.bell_curve_simple, R.drawable.monty_hall, R.drawable.trivia_quiz};
+        int[] colors = {R.color.meetMissStats, R.color.whatIsStatistics, R.color.gimmeFive, R.color.probability, R.color.normality, R.color.monty_hall, R.color.quiz};
         arguments = new ArrayList<>();
-        for(int i= 0; i < title.length; i++){
-            HomeArgument argument = new HomeArgument(title[i], subtitle[i],images[i], R.color.meetMissStats);
+        for (int i = 0; i < title.length; i++) {
+            HomeArgument argument = new HomeArgument(title[i], subtitle[i], images[i], colors[i]);
             arguments.add(argument);
         }
     }
@@ -33,7 +34,7 @@ public class HomeArgumentsLab {
         return argumentsLab;
     }
 
-    public List<HomeArgument> getArguments(){
+    public List<HomeArgument> getArguments() {
         return arguments;
     }
 }

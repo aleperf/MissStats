@@ -6,7 +6,12 @@
     <!-- Dimension Home Buttons    -->
     <dimen name="item_home_width">300dp</dimen>
     <dimen name="item_home_height">120dp</dimen>
-    <dimen name="item_home_font_title">20dp</dimen>
-    <dimen name="item_home_font_subtitle">16dp</dimen>
+    <dimen name="item_home_font_title">20sp</dimen>
+    <dimen name="item_home_font_subtitle">16sp</dimen>
+
+    <!-- Meet Miss Stats dimension -->
+    <dimen name="text_size_miss_stats">16sp</dimen>
+    <dimen name="text_size_miss_stats_emphatic">18sp</dimen>
+    <dimen name="text_size_title_miss_stats">21sp</dimen>
 
 </resources>

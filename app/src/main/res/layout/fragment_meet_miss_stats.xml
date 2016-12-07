@@ -1,14 +1,39 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="20dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context="stats.aleperf.example.missstats.MeetMissStatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/meet_miss_stats2"
+        android:id="@+id/meet_miss_stats_text_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/meetMissStats"/>
+        style="@style/title_miss_stats"
+        android:text="@string/meetMissStats_1"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/meet_miss_stats_text_2"
+        android:layout_below="@id/meet_miss_stats_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/descriptive_font_text"
+        android:text="@string/meetMissStats_2"/>
+
+    <TextView
+        android:id="@+id/meet_miss_stats_text_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/meet_miss_stats_text_2"
+        style="@style/emphatic_text"
+        android:text="@string/meetMissStats_3"/>
+</RelativeLayout>
+</ScrollView>

@@ -19,5 +19,18 @@
         <item name="android:textStyle">italic</item>
 
     </style>
+    <style name="descriptive_font_text" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">@dimen/text_size_miss_stats</item>
+</style>
+    <style name="title_miss_stats" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">@dimen/text_size_title_miss_stats</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
 
+    <style name="emphatic_text" parent ="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_size_miss_stats_emphatic</item>
+    </style>
 </resources>

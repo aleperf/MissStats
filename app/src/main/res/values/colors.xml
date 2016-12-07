@@ -7,5 +7,11 @@
     <color name="textColorHomeButtons">#FFFFFF</color>
     <!-- Home Items Colors -->
     <color name="homeBackground">#FFFFFF</color>
-    <color name="meetMissStats">#802196F3</color>
+    <color name="meetMissStats">#CC2196F3</color>
+    <color name="whatIsStatistics">#CCFF5722</color>
+    <color name="gimmeFive">#CC00BCD4</color>
+    <color name="probability">#CCD50000</color>
+    <color name="normality">#CC1A237E</color>
+    <color name="monty_hall">#CC00796B</color>
+    <color name="quiz">#CCE57373</color>
 </resources>

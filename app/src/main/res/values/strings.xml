@@ -23,16 +23,21 @@
     </string-array>
 
     <!-- Meet Miss Stats Tile Text -->
+    <string name="meetMissStats_1">Your Friendly Neighborhood Statistician</string>
+    <string name="meetMissStats_2"><b><i>Miss Stats</i></b> is the <i>Statistics teacher</i> everyone would be happy to meet, even who ignore what Statistics is. \n
+    Her mission is to spread the knowledge of Statistics everywhere with simple and  effective words and above all with the help of many, many examples. \n
+    Once, many years ago, I told her (I even don\'t remember about what): \n
+    <i>\"Miss Stats, this is really impossible for me, this would never happen!\",</i>
+   but she answered me, and I have never forgot it: \n
+    <b><i>\"Nothing is impossible. There are only things extremely improbable\"</i></b>
+   and then she calculated with extremely precision what my chance were.\n
+     No problem, big or small, can scare Miss Stats, her motto is always: \n
+    <b><i>\"Give me enough data and I will give you the solution\".\n</i> </b>
+    Numbers, according to Miss Stats, are very often undervalued, somebody think they are useful only for calculating results,
+        but this isn\'t true: if you observe them with attention,
+    like a true detective, they can tell you incredible stories and disclose entire secret worlds. </string>
+    <string name="meetMissStats_3">Follow Miss Stats through this app, you won\'t regret it!</string>
 
-    <string name="meetMissStats">Miss Stats is the Statistics teacher everyone would be happy to meet, even who ignore what Statistics is.
- Her mission is to spread the knowledge of Statistics everywhere with simple and  effective words and above all with the help of many, many examples.
- Once, many years ago, I told her (I even don\'t remember about what): \"Miss Stats, this is really impossible for me, this would never happen!\", but she answered me, and
- I have never forgot it: \"Nothing is impossible. There are only things extremely improbable\" and then she calculated with extremely precision what my chance were.
- No problem, big or small, can scare Miss Stats, her motto is always \"Give me enough data and I will give you the solution\".
- Numbers, according to Miss Stats, are very often undervalued, somebody think they are useful only for calculating results, ma this isn\'t true: if you observe them with attention,
- like a true detective, they can tell you incredible stories and disclose entire secret worlds.
- Follow Miss Stats through this app, you won\'t regret it!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

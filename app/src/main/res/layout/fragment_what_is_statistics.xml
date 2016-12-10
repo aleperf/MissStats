@@ -1,13 +1,32 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="stats.aleperf.example.missstats.WhatIsStatisticsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="What is Statistics?" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/what_is_stat_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/title_miss_stats"
+            android:text="@string/whatIsStatics_1"/>
+
+
+        <TextView
+            android:id="@+id/what_is_stat_text_view"
+            style="@style/descriptive_font_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/whatIsStatistics_2" />
+
+    </LinearLayout>
+</ScrollView>

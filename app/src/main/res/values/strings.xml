@@ -14,7 +14,7 @@
 
     <string-array name="scrap_item_subtitle">
         <item>Your friendly neighborhood statistician</item>
-        <item>Reality through numbers</item>
+        <item>Reality through data</item>
         <item>The five things to know</item>
         <item>The power of one</item>
         <item>We are all under a bell</item>
@@ -37,6 +37,25 @@
         but this isn\'t true: if you observe them with attention,
     like a true detective, they can tell you incredible stories and disclose entire secret worlds. </string>
     <string name="meetMissStats_3">Follow Miss Stats through this app, you won\'t regret it!</string>
+
+    <!-- What is Statitistc Tile Text -->
+    <string name="whatIsStatics_1">Reality Through Data</string>
+    <string name="whatIsStatistics_2">According to Miss Stats, <b>Statistics</b> is the science that transforms huge collections of <b>data</b>, numerical and not numerical, in something that makes sense for a normal human being, something
+that can tell you a story. \n
+The first thing to do in Statistics is always the same: <b>collect data</b>, because data are the basis for every statistical story.
+That\'s why statisticians ask people so many strange questions, like: \n
+<i>\"What is your favorite ice-cream flavor?\" \n</i>
+<i>\"Do you buy more ice-cream in summer or in winter?\"</i> \n
+Statisticians fill pages and pages of data, they study them from every point of view, they draw graphics showing the most preferred ice-creams and how many ice-creams are sold in
+every season. \n
+With data at hand, statisticians pass to the second phase: they must interpret the data, that\'s to say they must give them a meaning. This is the most difficult moment,
+ the moment that divides artists (like Miss Stats) from amateurs. \n
+ A statistical story could tell: <i>"Most of people eat much more ice-cream in Summer, especially chocolate and vanilla".</i>
+ This kind of stories are really important: they are used to make things work properly. \n
+ Imagine a world where the ice-cream flavors in your most trusted ice cream shop are decided by pure randomness and not by science.\n Terrible things could happen!
+ In Summer your local vendor could run out of chocolate and vanilla ice creams. \nDo you know which are the feelings of someone who wants a chocolate ice cream and finds only carrot and broccoli ice creams?
+ I suppose you don\'t: well, you can thank Statistics for this.
+    </string>
 
 
 

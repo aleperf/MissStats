@@ -1,9 +1,5 @@
 package stats.aleperf.example.missstats;
 
-/**
- * Created by Tundra on 07/12/2016.
- */
-
 public class HomeArgument {
 
     private final String mTitle;

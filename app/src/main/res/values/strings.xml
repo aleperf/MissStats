@@ -5,7 +5,7 @@
     <string-array name="scrap_item_title">
         <item>Meet Miss Stats</item>
         <item>What is Statistics?</item>
-        <item>Gimme Five!</item>
+        <item>Your Toolbox</item>
         <item>Probability</item>
         <item>The Shape of Normality</item>
         <item>The Monty Hall Problem</item>
@@ -15,7 +15,7 @@
     <string-array name="scrap_item_subtitle">
         <item>Your friendly neighborhood statistician</item>
         <item>Reality through data</item>
-        <item>The five things to know</item>
+        <item>How to describe data</item>
         <item>The power of one</item>
         <item>We are all under a bell</item>
         <item>How to win a tv show</item>
@@ -44,8 +44,8 @@
 that can tell you a story. \n
 The first thing to do in Statistics is always the same: <b>collect data</b>, because data are the basis for every statistical story.
 That\'s why statisticians ask people so many strange questions, like: \n
-<i>\"What is your favorite ice-cream flavor?\" \n</i>
-<i>\"Do you buy more ice-cream in summer or in winter?\"</i> \n
+<i>\"What is your favorite ice cream flavor?\" \n</i>
+<i>\"Do you buy more ice  cream in summer or in winter?\"</i> \n
 Statisticians fill pages and pages of data, they study them from every point of view, they draw graphics showing the most preferred ice-creams and how many ice-creams are sold in
 every season. \n
 With data at hand, statisticians pass to the second phase: they must interpret the data, that\'s to say they must give them a meaning. This is the most difficult moment,

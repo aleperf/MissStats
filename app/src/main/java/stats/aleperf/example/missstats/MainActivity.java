@@ -1,12 +1,10 @@
 package stats.aleperf.example.missstats;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener {
 
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
                 fragment = WhatIsStatisticsFragment.newInstance();
                 break;
             case 2:
-                fragment = GimmeFiveFragment.newInstance();
+                fragment = ToolboxFragment.newInstance();
                 break;
             case 3:
                 fragment = ProbabilityFragment.newInstance();

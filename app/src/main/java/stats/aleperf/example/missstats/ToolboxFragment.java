@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the GimmeFiveFragment.newInstance factory method to create an instance of this class;
+ * Use the ToolboxFragment.newInstance factory method to create an instance of this class;
  */
-public class GimmeFiveFragment extends Fragment {
+public class ToolboxFragment extends Fragment {
 
 
-    public GimmeFiveFragment() {
+    public ToolboxFragment() {
         // Required empty public constructor
     }
 
-    public static GimmeFiveFragment newInstance(){
-        return new GimmeFiveFragment();
+    public static ToolboxFragment newInstance(){
+        return new ToolboxFragment();
     }
 
 
@@ -27,7 +27,7 @@ public class GimmeFiveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gimme_five, container, false);
+        return inflater.inflate(R.layout.fragment_toolbox, container, false);
     }
 
 }

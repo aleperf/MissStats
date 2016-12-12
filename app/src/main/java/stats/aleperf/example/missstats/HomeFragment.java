@@ -20,6 +20,8 @@ import java.util.List;
 
 
 /**
+ * HomeFragment load the various HomeArgument contained in the HomeArgumentsLab to create
+ * a list of argument to choose.
  * A  {@link Fragment} subclass that has the task to host the titles of main arguments.
  * Activities that contain this fragment must implement the
  * {HomeFragment.OnHomeFragmentInteractionListener} interface
@@ -105,7 +107,7 @@ public class HomeFragment extends Fragment {
             mTitle = (TextView) itemView.findViewById(R.id.home_title_text_view);
             mSubTitle = (TextView) itemView.findViewById(R.id.home_subtitle_text_view);
             mImage = (ImageView) itemView.findViewById(R.id.image_arg);
-            mLayout =(LinearLayout) itemView.findViewById(R.id.home_linear_layout);
+            mLayout = (LinearLayout) itemView.findViewById(R.id.home_linear_layout);
         }
 
 
@@ -117,9 +119,9 @@ public class HomeFragment extends Fragment {
 
         public void bindStats(String title, String subtitle, int image, int color) {
             mTitle.setText(title);
-           mSubTitle.setText(subtitle);
-           mImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), image, null));
-            mLayout.setBackgroundColor(ContextCompat.getColor(getContext(),color));
+            mSubTitle.setText(subtitle);
+            mImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), image, null));
+            mLayout.setBackgroundColor(ContextCompat.getColor(getContext(), color));
         }
 
     }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 
 /**
+ * MeetMissStats introduce Miss Stats, your friendly neighborhood statistician
  * A simple {@link Fragment} subclass.
  * This class host the presentation of Miss Stats
  * Use the MeetMissStatsFragment#newInstance} factory method to

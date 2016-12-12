@@ -22,7 +22,7 @@
         <item>Test your knowledge</item>
     </string-array>
 
-    <!-- Meet Miss Stats Tile Text -->
+    <!-- Meet Miss Stats Full Text -->
     <string name="meetMissStats_1">Your Friendly Neighborhood Statistician</string>
     <string name="meetMissStats_2"><b><i>Miss Stats</i></b> is the <i>Statistics teacher</i> everyone would be happy to meet, even who ignore what Statistics is. \n
     Her mission is to spread the knowledge of Statistics everywhere with simple and  effective words and above all with the help of many, many examples. \n
@@ -38,7 +38,7 @@
     like a true detective, they can tell you incredible stories and disclose entire secret worlds. </string>
     <string name="meetMissStats_3">Follow Miss Stats through this app, you won\'t regret it!</string>
 
-    <!-- What is Statitistc Tile Text -->
+    <!-- What is Statitistc Full Text -->
     <string name="whatIsStatics_1">Reality Through Data</string>
     <string name="whatIsStatistics_2">According to Miss Stats, <b>Statistics</b> is the science that transforms huge collections of <b>data</b>, numerical and not numerical, in something that makes sense for a normal human being, something
 that can tell you a story. \n
@@ -57,6 +57,40 @@ With data at hand, statisticians pass to the second phase: they must interpret t
  I suppose you don\'t: well, you can thank Statistics for this.
     </string>
 
+    <!-- Your ToolBox  Text -->
+    <string-array name="ToolboxArgumentTitles">
+        <item>A Simple Sample</item>
+        <item>Mean</item>
+        <item>Minimum</item>
+        <item>Maximum</item>
+        <item>Lower Quartile</item>
+        <item>Upper Quartile</item>
+        <item>Five-number Summary</item>
+    </string-array>
 
+    <string-array name="ToolboxDescriptions">
+        <item> In Statistics if you want an answer to a question, the first thing to do is always collecting data.
+  Suppose you want to know how many people own a cat or a dog where you live.\n
+  You could try it the hard way: interview every person in your town and then sum the number of cat and dog owners.
+  This way you would have the most accurate answer possible.\n
+  If you live in a small village of a dozen of houses, maybe this is feasible, but in very big cities with millions of people,
+  you could pass years only doing this single interview.
+  In most of cases you really can\'t do millions of interviews.\n
+  So how do statisticians do in these cases? \n
+  They try to interview only a sample of the population. A sample is a smaller part of the total population.
+  In simple words, instead of interviewing millions of possible cat and dog owners, they interview a very smaller number: maybe a thousand, or some hundreds.\n
+  A sample is well chosen, when it is representative of the total population. Even if you can\'t interview everyone, you could try to interview many different kind
+  of people, so your smaller sample is like a little version of your town: for example some pet owners are young, other are old, some live in big houses, other have small
+  homes.\n
+  If your sample is well chosen, you can apply the results you find to all the population in your town.
+  If in your sample the cat and dog owners are 3 every ten people interviewed, than it\'s probable this true even for the other people you haven\'t interviewed.\n
+  What a time-saving!</item>
+        <item>Mean Description</item>
+        <item>Minimum Description</item>
+        <item>Maximum Description</item>
+        <item>Lower Quartile Description</item>
+        <item>Upper Quartile Description</item>
+        <item>Five-numbers Summary</item>
+    </string-array>
 
 </resources>

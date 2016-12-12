@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 
 
 /**
+ *
  * A simple {@link Fragment} subclass, this class host the explanation of what statistics i
  * * Use the WhatIsStatisticsFragment#newInstance} factory method to
  * create an instance of this fragment.
+ *
  */
 public class WhatIsStatisticsFragment extends Fragment {
 

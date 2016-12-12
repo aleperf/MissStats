@@ -6,6 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+/**
+ * MainActivity is the entry point of the app and manage the launch of the various Fragments
+ * corresponding to different arguments in the homepage of the app.
+ *
+ */
+
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener {
 
     final static String KEY_POSITION = "position";
@@ -24,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
             fm.beginTransaction().add(R.id.fragment_container, homeFragment).commit();
             //if this is a dual pane layout, initialize for the first time the detail_panel
             if (dualPane) {
+                //load MeetMissStats in the side panel as initial default argument.
                 Fragment detailFragment = MeetMissStatsFragment.newInstance();
                 fm.beginTransaction().add(R.id.detail_panel, detailFragment).commit();
             }

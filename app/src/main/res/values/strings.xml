@@ -60,15 +60,19 @@ With data at hand, statisticians pass to the second phase: they must interpret t
     <!-- Your ToolBox  Text -->
     <string-array name="ToolboxArgumentTitles">
         <item>A Simple Sample</item>
-        <item>Mean</item>
-        <item>Minimum</item>
-        <item>Maximum</item>
-        <item>Lower Quartile</item>
-        <item>Upper Quartile</item>
-        <item>Five-number Summary</item>
+        <item>The Mean</item>
+        <item>The Five-number Summary</item>
+        <item>The Minimum</item>
+        <item>The Maximum</item>
+        <item>The Median</item>
+        <item>The Lower Quartile</item>
+        <item>The Upper Quartile</item>
+        <item>Reflections</item>
+
     </string-array>
 
     <string-array name="ToolboxDescriptions">
+        <!--Simple Sample Description    -->
         <item> In Statistics if you want an answer to a question, the first thing to do is always collecting data.
   Suppose you want to know how many people own a cat or a dog where you live.\n
   You could try it the hard way: interview every person in your town and then sum the number of cat and dog owners.
@@ -85,12 +89,58 @@ With data at hand, statisticians pass to the second phase: they must interpret t
   If your sample is well chosen, you can apply the results you find to all the population in your town.
   If in your sample the cat and dog owners are 3 every ten people interviewed, than it\'s probable this true even for the other people you haven\'t interviewed.\n
   What a time-saving!</item>
-        <item>Mean Description</item>
-        <item>Minimum Description</item>
-        <item>Maximum Description</item>
-        <item>Lower Quartile Description</item>
-        <item>Upper Quartile Description</item>
-        <item>Five-numbers Summary</item>
+        <!-- Mean Description -->
+        <item>So you have collected a lot of data, but what are data telling you?
+  Suppose you have collected data about the number of cats owned by people in your town. You might wonder
+  if your fellow citizens own a number of cats bigger or smaller than in other towns, but how can you know that?
+  One of the possible way you can look at data is calculating the mean of all the values.\n
+  Mean is another word for average: you can obtain this value by summing up all the values you have collected, in this
+  case the number of cats owned by all the people in your sample, and then dividing this number by total number of cat owners.
+  Let\'s look to a very simple and small example.\n
+  Miss Stats has three friends that own cats: Dean, Don and Dan.\n
+  Dean loves so much cats that he has four cats, Don has two cats and Dan has only recently received a cat for his birthday (a gift from Miss Stats) so he owns
+  only one cat.\n
+  The total number of cat is : 4 + 2 + 1 = 7\n
+  The total number of cat owners in this sample is 3.\n
+  The mean is 7 : 3 = 2.33\n
+  So the average number of cats owned by Miss Stats\'friends is 2.33. \n
+  How is that? You know you can own a cat, two cats or even 3 or four cats as Dean, but how can you have 2.33 cats?
+  A fraction of cat? Poor creature! \n
+  The mean is only an indicative measure: it doesn\'t tell you exactly how many cats every person really owns, but
+  only a general tendency, so it\'s possible to have non-integer values even for subjects, like cats, who are present in nature only in
+  integer quantity.
+  So now you know that Miss Stats\'friends own a mean of 2.33 cats and you can compare this value to
+  that of other people\'s friends, maybe yours, so you can know who has the friends with more cats on average.
+  You can repeat this process for the sample of people in your town and than compare the value you found to that of people in other towns.</item>
+        <!-- Five number summary description -->
+        <item>When you have many elements in your collection of data, other numbers beside the mean can help you to describe how the data are
+  and above all what the the data are saying. \n \n
+  There five elements that are usually used to describe a collection of values, they are: <b> the Minimum, the Maximum, the Lower Quartile and the Upper Quartile. </b> \n \n
+   In the next pages you will look at them more closely.</item>
+        <!-- Minimum Description-->
+        <item>The minimum is the smallest element in your data. If you were collecting the ages of your friends, the minimum would be your youngest friend. </item>
+        <!-- Minimum Description-->
+        <item>The maximum is the greatest element in your data. If you were collecting the ages of your friends, it would be your oldest (in age) friend.</item>
+       <item>In an ordered collection of data, from smaller to bigger, the Median is the central value: in your ordered collection of friends ages, the Median would be
+  the friend whose age divides your friends in two groups of about the same size: the group where all of your friends are younger or of the same age of the Median friend, and the
+  group that are older or of the same age of your median friend. \n
+  To find the median, you just put the ages of your friends  in order, from smaller to bigger, then count how many ages you have, and divide that number by 2, take only the integer part of this number,
+  the one before the point  and add 1. \n
+  The number you obtain is the position of the Median. \n
+  Suppose you have 20 friends ages in your list: \n
+  divide the number of friends by 2:\n 20 : 2 = 10 \n
+  if the number of friends is odd, take only the integer part, i.e. if they are 21,\n 21 : 2 = 10.5, you take only the part before the point, 10. \n
+  add one: 10 + 1 = 11 \n
+  Your Median is the age in the eleventh position in the ordered list of ages (no matter if there are friends of the same age,
+  the eleventh position would always be the median in your list of 20 friends).</item>
+        <item>After your have divided your ordered list of ages of friends in two halves delimited by the median, you can further divide the first half in two: the central value
+   of this half is the Lower Quartile. The Lower Quartile is the median of your friends younger than the Median of the entire list.</item>
+        <item>You can repeat the same procedure with the second half divided by the Median (the official one):  the central value, the median of the upper part of the list, would be the Upper Quartile.</item>
+        <item>All these numbers together give you an idea of how the ages of your friends are distributed in an ordered list. If the Median, the Minimum and the Maximum are all similar, you
+  can reasonably conclude that all of your friend are of the same age. If there are big differences between these values, maybe you are the kind of person that can talk
+  to people of all ages. \n
+  Remember: the numbers stay always the same, the conclusions are something different, something that depends on how you look at data.</item>
+
     </string-array>
 
 </resources>

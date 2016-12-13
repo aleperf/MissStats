@@ -6,6 +6,14 @@ import android.content.res.Resources;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class assembles the elements to display in the Toolbox section of the app
+ * It retrieves elements from resources and build the necessary ToolboxArguments
+ * If you want to add elements to the Toolbox you have to provide the necessary
+ * resources and add them here.
+ *
+ */
+
 
 public class ToolboxArgsLab {
 

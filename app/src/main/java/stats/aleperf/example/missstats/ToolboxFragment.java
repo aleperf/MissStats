@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * A ToolBoxFragment is a list of elements of descriptive statistics represented as ToolboxArgument
+ * loaded into a ViewPager
  * A simple {@link Fragment} subclass.
  * Use the ToolboxFragment.newInstance factory method to create an instance of this class;
  */

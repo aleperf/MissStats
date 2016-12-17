@@ -17,7 +17,7 @@ import android.view.ViewGroup;
  */
 public class WhatIsStatisticsFragment extends Fragment {
 
-
+    public final static String TAG ="WhatIsStatisticsFragmentTag";
     public WhatIsStatisticsFragment() {
         // Required empty public constructor
     }

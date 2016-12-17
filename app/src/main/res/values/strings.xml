@@ -143,4 +143,15 @@ With data at hand, statisticians pass to the second phase: they must interpret t
 
     </string-array>
 
+   <!--Toolbox ViewPager Titles -->
+    <string name="toolbox_title_page_1">Samples</string>
+    <string name="toolbox_title_page_2">Mean</string>
+    <string name="toolbox_title_page_3">Five Numbers</string>
+    <string name="toolbox_title_page_4">Minimum</string>
+    <string name="toolbox_title_page_5">Maximum</string>
+    <string name="toolbox_title_page_6">Median</string>
+    <string name="toolbox_title_page_7">Lower Quartile</string>
+    <string name="toolbox_title_page_8">Upper Quartile</string>
+    <string name="toolbox_title_page_9">Reflections</string>
+
 </resources>

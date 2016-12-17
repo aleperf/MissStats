@@ -14,6 +14,8 @@ import android.view.ViewGroup;
  */
 public class MontyHallFragment extends Fragment {
 
+    public final static String TAG ="MontyHallFragmentTag";
+
 
     public MontyHallFragment() {
         // Required empty public constructor

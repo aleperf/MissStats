@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * MainActivity is the entry point of the app and manage the launch of the various Fragments
+ * MainActivity is the entry point of the app and manages the launch of the various Fragments
  * corresponding to different arguments in the homepage of the app.
  *
  */

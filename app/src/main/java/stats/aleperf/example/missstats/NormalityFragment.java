@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  */
 public class NormalityFragment extends Fragment {
 
-
+    public final static String TAG ="NormalityFragmentTag";
     public NormalityFragment() {
         // Required empty public constructor
     }

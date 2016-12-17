@@ -1,26 +1,31 @@
 package stats.aleperf.example.missstats;
 
 
-import android.content.Context;
+
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 import java.util.List;
 
 /**
  * A ToolBoxFragment is a list of elements of descriptive statistics represented as ToolboxArgument
  * loaded into a ViewPager
- * A simple {@link Fragment} subclass.
  * Use the ToolboxFragment.newInstance factory method to create an instance of this class;
  */
 public class ToolboxFragment extends Fragment {
+
+    public final static String TAG ="ToolboxFragmentTag";
+
+    private final String POSITION = "position";
+    private int pagePosition = 0;
 
 
     public ToolboxFragment() {
@@ -34,16 +39,19 @@ public class ToolboxFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        if(savedInstanceState != null){
+            pagePosition = savedInstanceState.getInt(POSITION, 0);
+        }
         View view = inflater.inflate(R.layout.fragment_toolbox, container, false);
         ViewPager pager = (ViewPager) view.findViewById(R.id.toolbox_view_pager);
-        PagerTabStrip tab = (PagerTabStrip) view.findViewById(R.id.pager_header);
-        tab.setTabIndicatorColor(getActivity().getResources().getColor(R.color.colorPrimaryDark));
+        TabLayout tab = (TabLayout) view.findViewById(R.id.sliding_tabs);
         pager.setAdapter(new ToolboxPageAdapter(getChildFragmentManager()));
-        pager.setCurrentItem(0);
+        pager.setCurrentItem(pagePosition);
+        tab.setupWithViewPager(pager);
         return view;
     }
 
@@ -72,8 +80,27 @@ public class ToolboxFragment extends Fragment {
 
         @Override
         public String getPageTitle(int position) {
-            return "Page " + (position + 1);
+
+            //return "Page " + (position + 1);
+            pagePosition = position;
+            switch(position){
+                case 0:return getString(R.string.toolbox_title_page_1);
+                case 1:return getString(R.string.toolbox_title_page_2);
+                case 2: return getString(R.string.toolbox_title_page_3);
+                case 3: return getString(R.string.toolbox_title_page_4);
+                case 4: return getString(R.string.toolbox_title_page_5);
+                case 5: return getString(R.string.toolbox_title_page_6);
+                case 6: return getString(R.string.toolbox_title_page_7);
+                case 7: return getString(R.string.toolbox_title_page_8);
+                default: return getString(R.string.toolbox_title_page_9);
+            }
         }
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(POSITION, pagePosition);
+
+    }
 }

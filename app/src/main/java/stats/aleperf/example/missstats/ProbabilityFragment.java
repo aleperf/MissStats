@@ -13,6 +13,7 @@ import android.view.ViewGroup;
  */
 public class ProbabilityFragment extends Fragment {
 
+    public final static String TAG ="ProbabilityFragmentTag";
 
     public ProbabilityFragment() {
         // Required empty public constructor

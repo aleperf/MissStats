@@ -18,6 +18,8 @@ import android.view.ViewGroup;
  */
 public class MeetMissStatsFragment extends Fragment {
 
+    public final static String TAG ="MeetMissStatsFragmentTag";
+
 
     public MeetMissStatsFragment() {
         // Required empty public constructor

@@ -20,13 +20,12 @@ import java.util.List;
 
 
 /**
- * HomeFragment load the various HomeArgument contained in the HomeArgumentsLab to create
+ * Load the various HomeArgument contained in the HomeArgumentsLab to create
  * a list of argument to choose.
- * A  {@link Fragment} subclass that has the task to host the titles of main arguments.
  * Activities that contain this fragment must implement the
  * {HomeFragment.OnHomeFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the  HomeFragment.newInstance factory method to
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
@@ -50,6 +49,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
 
     }

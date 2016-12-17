@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * A ToolboxPage is a Fragment displayed in a ViewPager in the Toolbox section of the App
  *
- * Use the {@link ToolboxPage.newInstance} factory method to
+ * Use the ToolboxPage.newInstance factory method to
  * create an instance of this fragment.
  */
 public class ToolboxPage extends Fragment {

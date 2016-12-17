@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * MainActivity is the entry point of the app and manages the launch of the various Fragments
  * corresponding to different arguments in the homepage of the app.
- *
  */
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener {
@@ -37,12 +36,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         } else {
             //the app si already initialized
             //if dual pane refresh the side menu and choose the appropriate detail panel
+
             if (dualPane) {
                 HomeFragment homeFragment = HomeFragment.newInstance();
                 fm.beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
-                int position = savedInstanceState.getInt(KEY_POSITION, 0);
-                onArgumentSelectedListener(position);
             }
+            int position = savedInstanceState.getInt(KEY_POSITION, 0);
+            onArgumentSelectedListener(position);
+
         }
     }
 

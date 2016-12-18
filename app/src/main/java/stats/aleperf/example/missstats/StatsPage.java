@@ -12,12 +12,14 @@ import android.widget.TextView;
 
 
 /**
- * A ToolboxPage is a Fragment displayed in a ViewPager in the Toolbox section of the App
+ * A StatsPage represent a fragment displaying a StatsArgument
  *
- * Use the ToolboxPage.newInstance factory method to
+ * Use the StatsPage.newInstance factory method to
  * create an instance of this fragment.
  */
-public class ToolboxPage extends Fragment {
+public class StatsPage extends Fragment {
+
+    private final String TAG = StatsPage.class.getSimpleName();
 
     private static final String PAGE_TITLE = "page title";
     private static final String PAGE_TEXT = "page text";
@@ -27,7 +29,7 @@ public class ToolboxPage extends Fragment {
     private String mText;
 
 
-    public ToolboxPage() {
+    public StatsPage() {
         // Required empty public constructor
     }
 
@@ -37,11 +39,11 @@ public class ToolboxPage extends Fragment {
      *
      * @param title TextViewTitle
      * @param text TextViewText
-     * @return A new instance of fragment ToolboxPage.
+     * @return A new instance of fragment StatsPage.
      */
 
-    public static ToolboxPage newInstance(String title, String text) {
-        ToolboxPage fragment = new ToolboxPage();
+    public static StatsPage newInstance(String title, String text) {
+        StatsPage fragment = new StatsPage();
         Bundle args = new Bundle();
         args.putString(PAGE_TITLE, title);
         args.putString(PAGE_TEXT, text);

@@ -13,12 +13,13 @@ import android.view.ViewGroup;
  */
 public class QuizFragment extends Fragment {
 
-    public final static String TAG ="QuizFragmentTag";
+    public final static String TAG = QuizFragment.class.getSimpleName();
+
     public QuizFragment() {
         // Required empty public constructor
     }
 
-    public static QuizFragment newInstance(){
+    public static QuizFragment newInstance() {
         return new QuizFragment();
     }
 

@@ -1,15 +1,15 @@
 package stats.aleperf.example.missstats;
 
 /**
- * A ToolboxArgument is an element of descriptive Statistics
- * It has a title mTitle and a description mText
+ * A StatsArgument represents a topic about Statistics
+ *
  */
 
-public class ToolboxArgument {
+public class StatsArgument {
     private final String mTitle;
     private final String mText;
 
-    public ToolboxArgument(String title, String text){
+    public StatsArgument(String title, String text){
         mTitle = title;
         mText = text;
 

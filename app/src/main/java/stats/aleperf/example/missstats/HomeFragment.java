@@ -30,7 +30,7 @@ import java.util.List;
  */
 public class HomeFragment extends Fragment {
 
-    public final static String TAG = "HomeFragmentTag";
+    public final static String TAG = HomeFragment.class.getSimpleName();
     private RecyclerView mRecyclerView;
     private StatsAdapter mAdapter;
     private OnHomeFragmentInteractionListener mCallback;
@@ -49,8 +49,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
     }
 

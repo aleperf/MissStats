@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
 
         mCurrentPosition = position;
         Fragment fragment;
+        String tag = getTag(position);
         switch (position) {
             case 0:
                 fragment = MeetMissStatsFragment.newInstance();
@@ -83,13 +84,32 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         if (dualPane) {
-            transaction.replace(R.id.detail_panel, fragment);
+            transaction.replace(R.id.detail_panel, fragment, tag);
         } else {
-            transaction.replace(R.id.fragment_container, fragment);
+            transaction.replace(R.id.fragment_container, fragment, tag);
         }
 
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    private String getTag(int position) {
+        switch (position) {
+            case 0:
+                return MeetMissStatsFragment.TAG;
+            case 1:
+                return WhatIsStatisticsFragment.TAG;
+            case 2:
+                return ToolboxFragment.TAG;
+            case 3:
+                return ProbabilityFragment.TAG;
+            case 4:
+                return NormalityFragment.TAG;
+            case 5:
+                return MontyHallFragment.TAG;
+            default:
+                return QuizFragment.TAG;
+        }
     }
 
     @Override
@@ -99,4 +119,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
 
 
     }
+
+
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="roll">Roll The Die</string>
+    <string name="start_rolling">press to start rolling</string>
+    <string name="stop_rolling">press to stop rolling</string>
+    <string name="game_win">You won!</string>
+    <string name="game_lose">You lose.</string>
+    <string name="chooser_hint">Number selected</string>
+    <string name="victory_ratio">Ratio of Victories</string>
+    <string name="guesses">Correct / Total </string>
+</resources>

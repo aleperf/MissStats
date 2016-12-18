@@ -143,7 +143,7 @@ With data at hand, statisticians pass to the second phase: they must interpret t
 
     </string-array>
 
-   <!--Toolbox ViewPager Titles -->
+    <!--Toolbox ViewPager Titles -->
     <string name="toolbox_title_page_1">Samples</string>
     <string name="toolbox_title_page_2">Mean</string>
     <string name="toolbox_title_page_3">Five Numbers</string>
@@ -153,5 +153,57 @@ With data at hand, statisticians pass to the second phase: they must interpret t
     <string name="toolbox_title_page_7">Lower Quartile</string>
     <string name="toolbox_title_page_8">Upper Quartile</string>
     <string name="toolbox_title_page_9">Reflections</string>
+
+    <string name="probability_intro_text">
+        <!-- Intro to Probability -->
+  Statisticians seem to have two great hobbies: they are always flipping coins and rolling dice.\n
+  Do you want to know why? It helps to understand <b>probability</b>. \n
+  Imagine to flip a coin, a regular fair coin that has two faces, a head and a tail.
+  We say the coin is fair, when every possible outcome has the same possibility to be seen: the coin can land face up or tail up, no face has some advantage to be seen.\n
+  The coin flips in the air and then falls on your hand, what are the chances that you see a head or a tail?\n
+  Probability can give you an exact measure of your chances of seeing a tail or a head, and in general probability measures
+  the likelihood of an event to occur.\n
+  Whatever the event in the world to calculate probability you need to know only two numbers: the number of times you have a success, when the event occurs, and the total number of possible outcomes.\n
+  Sometimes knowing this two numbers is quite simple, like in the case of a fair coin. Sometimes it is a bit more complicated, but fundamentally knowing
+  your probabilities is just a matter of knowing these two things: success versus total possibilities.\n
+  In the case of the coin, you have two possible outcome in total: you can se a head or you can se a tail, so your total number of outcomes is just two.\n
+  The probability of seeing a head is given by the number of events that gives a success, in this case is just one: you see a head (the other event is you see a tail).
+  In order to calculate probability we divide the number times we have a success by the number of total outcomes, so in this case we divide 1 by 2 and we have our probability of <b>1/2</b>,
+  just a half or 0.5. \n
+  You can repeat the same calculation for the tail, and guess what, it is again a half. \n
+  So when you flip a fair coin, you have half possibilities of seeing a head and half o seeing a tail.\n
+  Maybe you already intuitively knew this, but now that you know the rule, you can apply it to more cases, maybe less simple.
+  The nice thing about probability is that if you sum up the probability of all the possible outcomes, you always obtain the same number: 1 and no more than 1.
+  1 is a special number: it covers all the possibilities.
+  If an event has a probability of 1, it will always happen. On the other side, zero is another special number: an event with a probability of zero will never ever happen.
+  Miss Stats loves doing jokes about probability, so if someone says something like <b> <i>\"You don\'t have one single possibility\"</i></b> , if she feels very confident (and she usually does) always answers with a grin,
+  <b> <i> \"Oh no, my total probabilities just sum up to one\"</i> </b>, now you too can understand why.
+ </string>
+
+    <string name="probability_2_title">Theory, Reality and Independence.</string>
+
+    <string name="probability_2_text">
+        Now you know what are the probabilities of seeing a head or a tail when you flip a coin.
+  Does this mean that you will always know  which face you\'ll see flipping a coin before flipping it?
+  If your first flip is a tail, does this mean the next will be a head?
+  No, probability doesn\'t work this way: it doesn\'t tell you the outcome of every toss of the coin, it gives you an idea of the general picture.
+  Even if the calculated probability of seeing head is 1/2, if you flip the coin  only a few times, you can see results different from the theory.
+  Even if the coin is perfectly fair, you can see something like five consecutive tosses of a head.
+  But the more times you flip your coin, the more your result will be similar to theoretical ones.
+  Every time you flip a coin, you have always the same possibility to see a head or a tail, independently by whatever result you could have seen before.
+  Every flip of the coins is exactly like the first flip: there isn\'t such a thing like a memory of coins when you flip them.
+  Events like the flipping of a coin, where previous outcomes don\'t influence the following results, are said to be independent.
+  Independent events can be tricky, they can easily confuse people.
+  It\'s easy to think that if something hasn\'t happened, maybe the next time it will more likely happen, but remember: independent events know nothing
+  of the past.
+    </string>
+
+
+    <string name="probability_intro_title">Probability: From Zero To One </string>
+    <string name="probability_intro_tab_title">From Zero To One</string>
+    <string name="probability_2_tab_title">Independence</string>
+
+    <string name="probability_rolling_die">Probability Mini Game</string>
+
 
 </resources>

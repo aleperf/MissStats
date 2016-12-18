@@ -14,14 +14,14 @@ import android.view.ViewGroup;
  */
 public class MontyHallFragment extends Fragment {
 
-    public final static String TAG ="MontyHallFragmentTag";
+    public final static String TAG = MontyHallFragment.class.getSimpleName();
 
 
     public MontyHallFragment() {
         // Required empty public constructor
     }
 
-    public static MontyHallFragment newInstance(){
+    public static MontyHallFragment newInstance() {
         return new MontyHallFragment();
     }
 

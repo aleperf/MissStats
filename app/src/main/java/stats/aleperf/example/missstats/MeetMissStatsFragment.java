@@ -18,14 +18,12 @@ import android.view.ViewGroup;
  */
 public class MeetMissStatsFragment extends Fragment {
 
-    public final static String TAG ="MeetMissStatsFragmentTag";
+    public final static String TAG = MeetMissStatsFragment.class.getSimpleName();
 
 
     public MeetMissStatsFragment() {
         // Required empty public constructor
     }
-
-
 
 
     public static MeetMissStatsFragment newInstance() {
@@ -45,12 +43,6 @@ public class MeetMissStatsFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_meet_miss_stats, container, false);
     }
-
-
-
-
-
-
 
 
 }

@@ -14,12 +14,13 @@ import android.view.ViewGroup;
  */
 public class NormalityFragment extends Fragment {
 
-    public final static String TAG ="NormalityFragmentTag";
+    public final static String TAG = NormalityFragment.class.getSimpleName();
+
     public NormalityFragment() {
         // Required empty public constructor
     }
 
-    public static NormalityFragment newInstance(){
+    public static NormalityFragment newInstance() {
         return new NormalityFragment();
     }
 

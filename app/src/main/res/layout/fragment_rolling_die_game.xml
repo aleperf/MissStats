@@ -1,0 +1,193 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp"
+        android:background="@color/app_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding = "6dp">
+
+            <GridLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:columnCount="3">
+
+                <Button
+                    android:id="@+id/button_one"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/button_number_normal"
+                    android:text= "1" />
+                <Button
+                    android:id="@+id/button_two"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/button_number_normal"
+                    android:text="2" />
+                <Button
+                    android:id="@+id/button_three"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/button_number_normal"
+                    android:text="3"
+                    />
+                <Button
+                    android:id="@+id/button_four"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/button_number_normal"
+                    android:text="4"
+                    />
+                <Button
+                    android:id="@+id/button_five"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    style="@style/button_number_normal"
+                    android:text="5"
+                    />
+                <Button
+                    android:id="@+id/button_six"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:text="6"
+                    style="@style/button_number_normal" />
+
+
+            </GridLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingRight="16dp">
+                <TextView
+                    android:id="@+id/hint_chooser_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="14sp"
+                    android:text="@string/chooser_hint"
+                    tools:text="choose a number"
+                    android:textAlignment="center"/>
+                <TextView
+                    android:id="@+id/number_chosen_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="32dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:textSize="48dp"
+                    android:text="1"
+                    tools:text="1"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/start_stop_message"
+            android:padding="16dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="@string/start_rolling"/>
+
+        <ImageView
+            android:id="@+id/die"
+            tools:src="@drawable/die6"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:paddingTop="16dp"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/victory_message"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            tools:text="@string/game_win"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/guesses"/>
+
+                <TextView
+                    android:id="@+id/correct_guesses_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textSize="42dp"
+                    android:text="0/0"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/victory_ratio"/>
+
+                <TextView
+                    android:id="@+id/victories_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="42sp"
+                    android:text="0.00"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textColor="#FFFFFF"
+            android:background="@color/button_reset_color"
+            android:layout_marginTop="21dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="RESET"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

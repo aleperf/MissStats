@@ -33,4 +33,17 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textSize">@dimen/text_size_miss_stats_emphatic</item>
     </style>
+
+    <style name="button_number_normal" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/button_die_text_color</item>
+        <item name="android:background">@color/button_die_normal</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="TabLayout_Theme" parent="Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">#ffd740</item>
+    </style>
 </resources>

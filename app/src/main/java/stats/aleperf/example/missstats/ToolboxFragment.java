@@ -1,7 +1,7 @@
 package stats.aleperf.example.missstats;
 
 
-
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,16 +13,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A ToolBoxFragment is a list of elements of descriptive statistics represented as ToolboxArgument
+ * A ToolBoxFragment is a list of elements of descriptive statistics represented as StatsArgument
  * loaded into a ViewPager
  * Use the ToolboxFragment.newInstance factory method to create an instance of this class;
  */
 public class ToolboxFragment extends Fragment {
 
-    public final static String TAG ="ToolboxFragmentTag";
+    public final static String TAG = ToolboxFragment.class.getSimpleName();
 
     private final String POSITION = "position";
     private int pagePosition = 0;
@@ -57,11 +58,11 @@ public class ToolboxFragment extends Fragment {
 
     private class ToolboxPageAdapter extends FragmentStatePagerAdapter {
 
-        private List<ToolboxArgument> arguments;
+        private List<StatsArgument> arguments;
 
         ToolboxPageAdapter(FragmentManager manager) {
             super(manager);
-            arguments = new ToolboxArgsLab(getActivity()).getToolboxArguments();
+            arguments = new ToolboxArgsLab().getToolboxArguments();
 
         }
 
@@ -69,7 +70,7 @@ public class ToolboxFragment extends Fragment {
         public Fragment getItem(int position) {
             String title = arguments.get(position).getTitle();
             String text = arguments.get(position).getText();
-            ToolboxPage page = ToolboxPage.newInstance(title, text);
+            StatsPage page = StatsPage.newInstance(title, text);
             return page;
         }
 
@@ -94,6 +95,35 @@ public class ToolboxFragment extends Fragment {
                 case 7: return getString(R.string.toolbox_title_page_8);
                 default: return getString(R.string.toolbox_title_page_9);
             }
+        }
+    }
+
+
+    /**
+     * This class assembles the elements to display in the Toolbox section of the app
+     * It retrieves elements from resources and build the necessary StatsArguments
+     * If you want to add elements to the Toolbox you have to provide the necessary
+     * resources and add them here.
+     *
+     */
+
+    private class ToolboxArgsLab {
+
+        private List<StatsArgument> toolboxArguments;
+
+        public ToolboxArgsLab(){
+            Resources res = getResources();
+            String[] title = res.getStringArray(R.array.ToolboxArgumentTitles);
+            String[] text = res.getStringArray(R.array.ToolboxDescriptions);
+            toolboxArguments = new ArrayList<StatsArgument>();
+            for(int i= 0; i < title.length; i++){
+                StatsArgument arg = new StatsArgument(title[i], text[i]);
+                toolboxArguments.add(arg);
+            }
+        }
+
+        public List<StatsArgument> getToolboxArguments(){
+            return toolboxArguments;
         }
     }
 

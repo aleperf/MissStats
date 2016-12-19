@@ -52,32 +52,40 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
 
         mCurrentPosition = position;
         Fragment fragment;
-        String tag = getTag(position);
+        String tag;
         switch (position) {
             case 0:
                 fragment = MeetMissStatsFragment.newInstance();
+                tag = MeetMissStatsFragment.TAG;
                 break;
             case 1:
                 fragment = WhatIsStatisticsFragment.newInstance();
+                tag = WhatIsStatisticsFragment.TAG;
                 break;
             case 2:
                 fragment = ToolboxFragment.newInstance();
+                tag = ToolboxFragment.TAG;
                 break;
             case 3:
                 fragment = ProbabilityFragment.newInstance();
+                tag = ProbabilityFragment.TAG;
                 break;
             case 4:
                 fragment = NormalityFragment.newInstance();
+                tag = NormalityFragment.TAG;
                 break;
             case 5:
                 fragment = MontyHallFragment.newInstance();
+                tag = MontyHallFragment.TAG;
                 break;
             case 6:
                 fragment = QuizFragment.newInstance();
+                tag = QuizFragment.TAG;
 
                 break;
             default:
                 fragment = MeetMissStatsFragment.newInstance();
+                tag = MeetMissStatsFragment.TAG;
         }
 
         boolean dualPane = getResources().getBoolean(R.bool.dual_pane);
@@ -93,24 +101,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         transaction.commit();
     }
 
-    private String getTag(int position) {
-        switch (position) {
-            case 0:
-                return MeetMissStatsFragment.TAG;
-            case 1:
-                return WhatIsStatisticsFragment.TAG;
-            case 2:
-                return ToolboxFragment.TAG;
-            case 3:
-                return ProbabilityFragment.TAG;
-            case 4:
-                return NormalityFragment.TAG;
-            case 5:
-                return MontyHallFragment.TAG;
-            default:
-                return QuizFragment.TAG;
-        }
-    }
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

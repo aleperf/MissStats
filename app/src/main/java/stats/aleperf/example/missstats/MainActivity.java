@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 /**
  * MainActivity is the entry point of the app and manages the launch of the various Fragments
@@ -26,20 +27,30 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         //if this is the first time the app is initialized, add the needed fragments
         if (savedInstanceState == null) {
             HomeFragment homeFragment = HomeFragment.newInstance();
-            fm.beginTransaction().add(R.id.fragment_container, homeFragment).commit();
+            fm.beginTransaction().add(R.id.fragment_container, homeFragment, HomeFragment.TAG).commit();
             //if this is a dual pane layout, initialize for the first time the detail_panel
             if (dualPane) {
                 //load MeetMissStats in the side panel as initial default argument.
                 Fragment detailFragment = MeetMissStatsFragment.newInstance();
-                fm.beginTransaction().add(R.id.detail_panel, detailFragment).commit();
+                fm.beginTransaction().add(R.id.detail_panel, detailFragment, MeetMissStatsFragment.TAG).commit();
             }
         } else {
             //the app si already initialized
             //if dual pane refresh the side menu and choose the appropriate detail panel
 
             if (dualPane) {
-                HomeFragment homeFragment = HomeFragment.newInstance();
-                fm.beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
+                //if there is an instance of homeFragment put the existing instance in fragment_container
+                HomeFragment homeFragment = (HomeFragment) fm.findFragmentByTag(HomeFragment.TAG);
+                if (homeFragment != null) {
+
+                    FragmentTransaction transaction = fm.beginTransaction();
+                    transaction.replace(R.id.fragment_container, homeFragment, HomeFragment.TAG).commit();
+
+                } else {
+                    // homeFragment has been destroyed, create a new instance
+                    homeFragment = HomeFragment.newInstance();
+                    fm.beginTransaction().replace(R.id.fragment_container, homeFragment, HomeFragment.TAG).commit();
+                }
             }
             int position = savedInstanceState.getInt(KEY_POSITION, 0);
             onArgumentSelectedListener(position);
@@ -100,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 
 
     @Override

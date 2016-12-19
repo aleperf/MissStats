@@ -2,6 +2,7 @@ package stats.aleperf.example.missstats;
 
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 public class ProbabilityFragment extends Fragment {
 
     public final static String TAG = ProbabilityFragment.class.getSimpleName();
+    private ProbabilityPagerAdapter mAdapter;
 
     public ProbabilityFragment() {
         // Required empty public constructor
@@ -28,7 +30,7 @@ public class ProbabilityFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
+
     }
 
     public static ProbabilityFragment newInstance() {
@@ -41,13 +43,14 @@ public class ProbabilityFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_probability, container, false);
-        View view = inflater.inflate(R.layout.fragment_toolbox, container, false);
-        ViewPager pager = (ViewPager) view.findViewById(R.id.toolbox_view_pager);
-        TabLayout tab = (TabLayout) view.findViewById(R.id.sliding_tabs);
-        pager.setAdapter(new ProbabilityFragment.ProbabilityPagerAdapter(getChildFragmentManager()));
+
+        ViewPager pager = (ViewPager) root.findViewById(R.id.probability_view_pager);
+        TabLayout tab = (TabLayout) root.findViewById(R.id.sliding_tabs);
+        mAdapter = new ProbabilityPagerAdapter(getChildFragmentManager());
+        pager.setAdapter(mAdapter);
         pager.setCurrentItem(0);
         tab.setupWithViewPager(pager);
-        return view;
+        return root;
 
     }
 
@@ -89,6 +92,14 @@ public class ProbabilityFragment extends Fragment {
                     return getString(R.string.probability_rolling_die);
 
             }
+        }
+
+        @Override
+        public void restoreState(Parcelable state, ClassLoader loader) {
+            //override the super method to do nothing
+            // or the app crashes, because this method kills the adapter
+
+
         }
     }
 

@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener {
 
     final static String KEY_POSITION = "position";
-    int mCurrentPosition = -1;
+    int mCurrentPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

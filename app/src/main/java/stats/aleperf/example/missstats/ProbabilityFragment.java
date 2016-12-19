@@ -28,7 +28,7 @@ public class ProbabilityFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setRetainInstance(true);
     }
 
     public static ProbabilityFragment newInstance() {

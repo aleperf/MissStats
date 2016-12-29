@@ -18,4 +18,8 @@
     <color name="button_die_text_color">#FFFFFF</color>
     <color name="button_reset_color">#ef5350</color>
     <color name="app_background">#FFFFFF</color>
+
+    <!--SpinningCoinFragment Colors -->
+    <color name="spinning_coin_reset_button_background">#EBC859</color>
+    <color name="spinning_coin_reset_button_text">#424242</color>
 </resources>

@@ -25,6 +25,7 @@ public class ProbabilityFragment extends Fragment {
 
     public ProbabilityFragment() {
         // Required empty public constructor
+        setRetainInstance(true);
     }
 
     @Override
@@ -70,6 +71,9 @@ public class ProbabilityFragment extends Fragment {
                     return StatsPage.newInstance(getString(R.string.probability_intro_title), getString(R.string.probability_intro_text));
                 case 1:
                     return StatsPage.newInstance(getString(R.string.probability_2_title), getString(R.string.probability_2_text));
+                case 2:
+
+                    return new SpinningCoinFragment();
                 default:
                     return new RollingDieGameFragment();
             }
@@ -77,7 +81,7 @@ public class ProbabilityFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Override
@@ -88,6 +92,8 @@ public class ProbabilityFragment extends Fragment {
                     return getString(R.string.probability_intro_tab_title);
                 case 1:
                     return getString(R.string.probability_2_tab_title);
+                case 2:
+                    return "Probability in Practice";
                 default:
                     return getString(R.string.probability_rolling_die);
 

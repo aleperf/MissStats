@@ -156,7 +156,7 @@ With data at hand, statisticians pass to the second phase: they must interpret t
 
     <string name="probability_intro_text">
         <!-- Intro to Probability -->
-  Statisticians seem to have two great hobbies: they are always flipping coins and rolling dice.\n
+        Statisticians seem to have two great hobbies: they are always flipping coins and rolling dice.\n
   Do you want to know why? It helps to understand <b>probability</b>. \n
   Imagine to flip a coin, a regular fair coin that has two faces, a head and a tail.
   We say the coin is fair, when every possible outcome has the same possibility to be seen: the coin can land face up or tail up, no face has some advantage to be seen.\n
@@ -166,7 +166,7 @@ With data at hand, statisticians pass to the second phase: they must interpret t
   Whatever the event in the world to calculate probability you need to know only two numbers: the number of times you have a success, when the event occurs, and the total number of possible outcomes.\n
   Sometimes knowing this two numbers is quite simple, like in the case of a fair coin. Sometimes it is a bit more complicated, but fundamentally knowing
   your probabilities is just a matter of knowing these two things: success versus total possibilities.\n
-  In the case of the coin, you have two possible outcome in total: you can se a head or you can se a tail, so your total number of outcomes is just two.\n
+  In the case of the coin, you have two possible outcomes in total: you can se a head or you can se a tail, so your total number of outcomes is just two.\n
   The probability of seeing a head is given by the number of events that gives a success, in this case is just one: you see a head (the other event is you see a tail).
   In order to calculate probability we divide the number times we have a success by the number of total outcomes, so in this case we divide 1 by 2 and we have our probability of <b>1/2</b>,
   just a half or 0.5. \n
@@ -204,6 +204,20 @@ With data at hand, statisticians pass to the second phase: they must interpret t
     <string name="probability_2_tab_title">Independence</string>
 
     <string name="probability_rolling_die">Probability Mini Game</string>
+
+
+    <!-- SpinningCoinFragment Strings -->
+    <string name="probability_in_practice_title">Probability In Practice</string>
+    <string name="probability_in_practice_intro">Let\'s practice a bit with one of favourite Miss Stats\' coin (she is has a huge collections of coins she uses to practice about statistics),
+  you can see it here below. \n Miss Stats\' coin has a face with a thumb up and a face with a thumb down, instead of regular head and tail, but beside this
+  it is exactly like every other fair coin: there is a 0.5 probability of seeing a thumb up and a 0.5 probability of seeing a thumb down, this is equivalent to say
+  that when you spin the coin, half of the time you will see a thumb up and the other half you will see a thumb down.\n
+  <b>Touch the coin to spin it and touch it again to stop it. </b>\n
+  Miss Stats will update the count of thumbs up and thumbs down for you.\n You will notice that as the number of spins increases, the number of times you observe
+  thumbs up becomes gradually more similar to number of times you observe thumbs down.
+    </string>
+    <string name="spinning_coin_reset_button">RESET</string>
+
 
 
 </resources>

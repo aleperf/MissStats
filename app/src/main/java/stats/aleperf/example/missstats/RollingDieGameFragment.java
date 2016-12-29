@@ -246,7 +246,6 @@ public class RollingDieGameFragment extends Fragment {
             victoryMessage.setVisibility(View.INVISIBLE);
         } else {
             //if is rolling, stop rolling and update all field according the result.
-            //stop rolling sound
             isRolling = false;
             Random random = new Random();
             lastSeenFace = random.nextInt(6) + 1;

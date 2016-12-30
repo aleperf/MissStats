@@ -1,10 +1,13 @@
 package stats.aleperf.example.missstats;
 
 
+import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,18 +17,21 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import static android.os.Build.VERSION_CODES.M;
+
 
 /**
  * A simple {@link Fragment} subclass.
+ * Activity Hosting This Fragment must implement interface SpinningCoinCallBack and interface ProbabilityFragment.CoinDataRetriever
  */
 public class SpinningCoinFragment extends Fragment {
 
-    private final int THUMB_UP_FACE = R.drawable.thumb_up;
-    private final int THUMB_DOWN_FACE = R.drawable.thumb_down;
-    private final String LAST_SEEN_FACE = "last seen face";
-    private final String IS_SPINNING = "is spinning";
-    private final String COUNTER_THUMBS_UP = "counter thumbs up";
-    private final String COUNTER_THUMBS_DOWN = "counter thumbs down";
+    public static final int THUMB_UP_FACE = R.drawable.thumb_up;
+    public static final int THUMB_DOWN_FACE = R.drawable.thumb_down;
+    public static final String LAST_SEEN_FACE = "last seen face";
+    public static final String IS_SPINNING = "is spinning";
+    public static final String COUNTER_THUMBS_UP = "counter thumbs up";
+    public static final String COUNTER_THUMBS_DOWN = "counter thumbs down";
     ImageView mSpinningCoinImage;
     TextView mThumbsUpCounterTextView;
     TextView mThumbsDownCounterTextView;
@@ -34,26 +40,38 @@ public class SpinningCoinFragment extends Fragment {
     private int mCounterThumbsDown = 0;
     private boolean mIsSpinning = false;
     private int mLastSeenFace = THUMB_UP_FACE;
-
+    private SpinningCoinCallBack mCallback;
 
     public SpinningCoinFragment() {
         // Required empty public constructor
         setRetainInstance(true);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        if(savedInstanceState != null){
-            mCounterThumbsUp = savedInstanceState.getInt(COUNTER_THUMBS_UP, 0);
-            mCounterThumbsDown = savedInstanceState.getInt(COUNTER_THUMBS_DOWN, 0);
-            mIsSpinning = savedInstanceState.getBoolean(IS_SPINNING, false);
-            mLastSeenFace = savedInstanceState.getInt(LAST_SEEN_FACE, THUMB_UP_FACE);
+    public static SpinningCoinFragment newInstance(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(COUNTER_THUMBS_UP, counterUp);
+        bundle.putInt(COUNTER_THUMBS_DOWN, counterDown);
+        bundle.putBoolean(IS_SPINNING, isSpinning);
+        bundle.putInt(LAST_SEEN_FACE, lastSeenFace);
 
-        }
+        SpinningCoinFragment fragment = new SpinningCoinFragment();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (SpinningCoinCallBack) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,12 +87,21 @@ public class SpinningCoinFragment extends Fragment {
                 updateSpinning();
             }
         });
-        if (savedInstanceState != null) {
-            mCounterThumbsUp = savedInstanceState.getInt(COUNTER_THUMBS_UP, 0);
-            mCounterThumbsDown = savedInstanceState.getInt(COUNTER_THUMBS_DOWN, 0);
-            mIsSpinning = savedInstanceState.getBoolean(IS_SPINNING, false);
-            mLastSeenFace = savedInstanceState.getInt(LAST_SEEN_FACE, THUMB_UP_FACE);
+        if (savedInstanceState == null) {
+            mCounterThumbsUp = getArguments().getInt(COUNTER_THUMBS_UP, 0);
+            mCounterThumbsDown = getArguments().getInt(COUNTER_THUMBS_DOWN, 0);
+            mIsSpinning = getArguments().getBoolean(IS_SPINNING, false);
+            mLastSeenFace = getArguments().getInt(LAST_SEEN_FACE, THUMB_UP_FACE);
+        } else {
+            ProbabilityFragment.CoinDataRetriever coinDataRetriever = (ProbabilityFragment.CoinDataRetriever) getActivity();
+            Bundle bundle = coinDataRetriever.retrieveCoinData();
+            mCounterThumbsUp = bundle.getInt(SpinningCoinFragment.COUNTER_THUMBS_UP, 0);
+            mCounterThumbsDown = bundle.getInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN);
+            mIsSpinning = bundle.getBoolean(SpinningCoinFragment.IS_SPINNING, false);
+            mLastSeenFace = bundle.getInt(SpinningCoinFragment.LAST_SEEN_FACE, SpinningCoinFragment.THUMB_UP_FACE);
         }
+        Log.d("uffa", "sono in onCreateView di SpinningCoin e mCounterThumbsUp è " + mCounterThumbsUp);
+
         mThumbsUpCounterTextView.setText(String.valueOf(mCounterThumbsUp));
         mThumbsDownCounterTextView.setText(String.valueOf(mCounterThumbsDown));
 
@@ -145,11 +172,26 @@ public class SpinningCoinFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(LAST_SEEN_FACE, mLastSeenFace);
-        outState.putInt(COUNTER_THUMBS_UP, mCounterThumbsUp);
-        outState.putInt(COUNTER_THUMBS_DOWN, mCounterThumbsDown);
-        outState.putBoolean(IS_SPINNING, mIsSpinning);
+        mCallback.saveCoinData(mCounterThumbsUp, mCounterThumbsDown, mIsSpinning, mLastSeenFace);
+        outState.putInt(SpinningCoinFragment.COUNTER_THUMBS_UP, mCounterThumbsUp);
+        outState.putInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, mCounterThumbsDown);
+        outState.putBoolean(SpinningCoinFragment.IS_SPINNING, mIsSpinning);
+        outState.putInt(SpinningCoinFragment.LAST_SEEN_FACE, SpinningCoinFragment.THUMB_UP_FACE);
+        Log.d("uffa", "sono in onSaveInstanceState di SpinningCoin mCounter è uguale a " + mCounterThumbsUp);
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        mCallback.saveCoinData(mCounterThumbsUp, mCounterThumbsDown, mIsSpinning, mLastSeenFace);
+        Log.d("uffa", "sono in onPause di SpinningCoin, mCounterThumbs up è uguale a" + mCounterThumbsUp);
+    }
+
+    /***
+     * Interface required to save coin data in the hosting activity
+     */
+    public interface SpinningCoinCallBack {
+        void saveCoinData(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace);
+    }
 }

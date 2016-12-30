@@ -5,16 +5,36 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 /**
  * MainActivity is the entry point of the app and manages the launch of the various Fragments
  * corresponding to different arguments in the homepage of the app.
  */
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener,
+SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever {
 
     final static String KEY_POSITION = "position";
     int mCurrentPosition = 0;
+
+    //Spinning Coin Constants
+
+
+    //SpinningCoinFields
+    int counterUp = 0;
+    int counterDown = 0;
+    boolean isSpinning = false;
+    int lastSeenCoinFace = R.drawable.thumb_up;
+
+
+    @Override
+    public  void saveCoinData(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace) {
+        this.counterUp = counterUp;
+        this.counterDown = counterDown;
+        this.isSpinning = isSpinning;
+        this.lastSeenCoinFace = lastSeenFace;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
                     fm.beginTransaction().addToBackStack(HomeFragment.TAG);
                 }
             }
+            //load SpinningCoinData
+            counterUp = savedInstanceState.getInt(SpinningCoinFragment.COUNTER_THUMBS_UP, 0);
+            Log.d("uffa", "sono in Oncreate e counterUp e uguale a " + counterUp);
+            counterDown = savedInstanceState.getInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, 0);
+            isSpinning= savedInstanceState.getBoolean(SpinningCoinFragment.IS_SPINNING, isSpinning);
+            lastSeenCoinFace = savedInstanceState.getInt(SpinningCoinFragment.LAST_SEEN_FACE, SpinningCoinFragment.THUMB_UP_FACE);
+
+
             onArgumentSelectedListener(position);
 
 
@@ -123,8 +151,11 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
                 fragment = fm.findFragmentByTag(ProbabilityFragment.TAG);
                 if (fragment != null) {
                     removeFragment(fragment, fm, tag);
+                    Log.d("uffa", "sto usando un probability già creato");
                 } else {
-                    fragment = ProbabilityFragment.newInstance();
+                    Log.d("uffa", "sto creando un nuovo fragment");
+                    fragment = ProbabilityFragment.newInstance(counterUp, counterDown, isSpinning, lastSeenCoinFace);
+
                 }
                 break;
 
@@ -178,9 +209,24 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnHo
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_POSITION, mCurrentPosition);
+        outState.putInt(SpinningCoinFragment.COUNTER_THUMBS_UP, counterUp);
+        outState.putInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, counterDown);
+        outState.putBoolean(SpinningCoinFragment.IS_SPINNING, isSpinning);
+        outState.putInt(SpinningCoinFragment.LAST_SEEN_FACE, lastSeenCoinFace);
+        Log.d("uffa", "sono in onSaveInstanceState di MainActivity, counter up + uguale " + counterUp);
 
 
     }
 
 
+
+    @Override
+    public Bundle retrieveCoinData() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(SpinningCoinFragment.COUNTER_THUMBS_UP, counterUp);
+        bundle.putInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, counterDown);
+        bundle.putBoolean(SpinningCoinFragment.IS_SPINNING, isSpinning);
+        bundle.putInt(SpinningCoinFragment.LAST_SEEN_FACE, lastSeenCoinFace);
+        return bundle;
+    }
 }

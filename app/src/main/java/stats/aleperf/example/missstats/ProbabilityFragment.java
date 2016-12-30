@@ -18,8 +18,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * use the factory method ProbabilityFragment.newInstance() to create an instance of this class
- * Activities hosting this fragment must implement the CoinDataRetriever Interface and the SpinningCoinFragment.SpinningCoinCallback
- *
+ * Activities hosting this fragment must implement the CoinDataRetriever Interface
  */
 public class ProbabilityFragment extends Fragment {
 
@@ -44,8 +43,26 @@ public class ProbabilityFragment extends Fragment {
        // setRetainInstance(true);
     }
 
+    /**
+     * Interface used to manage The SpinningCoinFragment fields
+     * in the hosting activity.
+     */
     public interface CoinDataRetriever {
+        /**
+         * Retrieve the count of Thumbs Up, the count of Thumbs Down, the Spinning State
+         * and the last face of the coin when not spinning.
+         * @return a Bundle containing the necessary data fields to update the SpinningCoinFragment
+         */
         Bundle retrieveCoinData();
+
+        /**
+         * Save the SpinningCoinDataFields in fields of the hosting activity
+         * @param counterUp the count of Thumbs UP
+         * @param counterDown the count of Thumbs Down
+         * @param isSpinning true if the coins is spinning, false otherwise
+         * @param lastSeenFace the last face of the coin when not spinning.
+         */
+        void saveCoinData(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace);
     }
 
 
@@ -57,7 +74,6 @@ public class ProbabilityFragment extends Fragment {
         bundle.putInt(LAST_SEEN_FACE, lastSeenCoinFace);
         ProbabilityFragment fragment = new ProbabilityFragment();
         fragment.setArguments(bundle);
-        Log.d("uffa", "ho fatto Probability New Instance");
         return fragment;
     }
 
@@ -116,7 +132,6 @@ public class ProbabilityFragment extends Fragment {
                 case 1:
                     return StatsPage.newInstance(getString(R.string.probability_2_title), getString(R.string.probability_2_text));
                 case 2:
-                    Log.d("uffa!", "Sto creando un nuovo SpinningCoinFragment con newInstance, counterThumbsUp = " + counterThumbsUp);
                     return SpinningCoinFragment.newInstance(counterThumbsUp, counterThumbsDown, isSpinningAdapter, lastFace);
                 default:
                     return new RollingDieGameFragment();

@@ -13,7 +13,7 @@ import android.util.Log;
  */
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnHomeFragmentInteractionListener,
-SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever {
+ ProbabilityFragment.CoinDataRetriever {
 
     final static String KEY_POSITION = "position";
     int mCurrentPosition = 0;
@@ -28,13 +28,7 @@ SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever
     int lastSeenCoinFace = R.drawable.thumb_up;
 
 
-    @Override
-    public  void saveCoinData(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace) {
-        this.counterUp = counterUp;
-        this.counterDown = counterDown;
-        this.isSpinning = isSpinning;
-        this.lastSeenCoinFace = lastSeenFace;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +69,6 @@ SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever
             }
             //load SpinningCoinData
             counterUp = savedInstanceState.getInt(SpinningCoinFragment.COUNTER_THUMBS_UP, 0);
-            Log.d("uffa", "sono in Oncreate e counterUp e uguale a " + counterUp);
             counterDown = savedInstanceState.getInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, 0);
             isSpinning= savedInstanceState.getBoolean(SpinningCoinFragment.IS_SPINNING, isSpinning);
             lastSeenCoinFace = savedInstanceState.getInt(SpinningCoinFragment.LAST_SEEN_FACE, SpinningCoinFragment.THUMB_UP_FACE);
@@ -151,11 +144,8 @@ SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever
                 fragment = fm.findFragmentByTag(ProbabilityFragment.TAG);
                 if (fragment != null) {
                     removeFragment(fragment, fm, tag);
-                    Log.d("uffa", "sto usando un probability già creato");
                 } else {
-                    Log.d("uffa", "sto creando un nuovo fragment");
                     fragment = ProbabilityFragment.newInstance(counterUp, counterDown, isSpinning, lastSeenCoinFace);
-
                 }
                 break;
 
@@ -213,9 +203,15 @@ SpinningCoinFragment.SpinningCoinCallBack, ProbabilityFragment.CoinDataRetriever
         outState.putInt(SpinningCoinFragment.COUNTER_THUMBS_DOWN, counterDown);
         outState.putBoolean(SpinningCoinFragment.IS_SPINNING, isSpinning);
         outState.putInt(SpinningCoinFragment.LAST_SEEN_FACE, lastSeenCoinFace);
-        Log.d("uffa", "sono in onSaveInstanceState di MainActivity, counter up + uguale " + counterUp);
 
+    }
 
+    @Override
+    public  void saveCoinData(int counterUp, int counterDown, boolean isSpinning, int lastSeenFace) {
+        this.counterUp = counterUp;
+        this.counterDown = counterDown;
+        this.isSpinning = isSpinning;
+        this.lastSeenCoinFace = lastSeenFace;
     }
 
 
